@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+
+{% block main %}
+<main class="main">
+
+    <div class="container">
+        <div class="main__content" data-aos="fade-up" data-aos-anchor-placement="top-center"
+             data-aos-duration="1300">
+            <h1 class="main__content-title">Turon universiteti haqida</h1>
+            <div class="main__content-mini">
+                <img class="main__content-img" src="{% static 'university/img/main_img.png' %}" alt=""/>
+                <p class="main__content-text">Turon universiteti 2022 yilda Oʻzbekistonda yuqori malakali,
+                    raqobatbardosh
+                    kadrlar tayyorlash maqsadida Qarshi shahrida tashkil etilgan bo'lib hozirda 6 ta ta'lim
+                    yo'nalishlarida
+                    mutaxassis tayyorlashni niyat qilgan. Turon universiteti bir qator yetakchi va nufuzli
+                    tashkilotlar bilan
+                    hamkorlik aloqalariga ega. Professor oʻqituvchilarimiz darslarni yangi texnologiyalar, zamonaviy
+                    dasturlar,
+                    fanga boʻlgan yangicha qarashlar bilan olib borishni maqsad qilib olgan. Shuning uchun, aziz
+                    ota-onalar, siz
+                    oʻz farzandlaringizni bizga ishonib topshirishingiz mumkin. Biz ularni maʼnan yetuk va kasbiy
+                    bilimga ega
+                    qilib tarbiyalaymiz.<br/> Universitet o'z oldiga xalqaro munosabatlar, iqtisodiyot, Xorijiy
+                    mamlakatlar
+                    iqtisodiyoti, pedagogika, xitoy, turk, ingliz, arab va koreys tillari yoʻnalishlari boʻyicha
+                    Oʻzbekiston va
+                    jahon miqyosida raqobatbardosh, zamonaviy kasbiy koʻnikmalarga ega boʻlgan yuqori malakali
+                    mutaxassislarni
+                    tayyorlashni maqsad qilib olgan.</p>
+                <br/>
+                <p class="main__content-text">Turon universiteti xorijiy talabalarni universitetga jalb qilish uchun
+                    turli xil
+                    xalqaro dasturlarni taklif qiladi. Hozirda Turon universiteti 20 ta davlatning 100 dan ziyod
+                    universitetlari
+                    bilan hamkorlik aloqalarini yoʻlga qoʻygan, har semestrda 100 nafar xorijiy talabalarni qabul
+                    qilish
+                    rejalashtirilgan.
+                    Universitetga abituriyentlarni qabul qilish va kirish imtihonlarini oʻtkazish Oʻzbekiston
+                    Respublikasi Oliy
+                    va oʻrta maxsus ta’lim vazirligi bilan kelishilgan holda Turon universiteti tomonidan
+                    belgilangan talablar,
+                    tartib va muddatlarga muvofiq amalga oshiriladi.
+                    Universitet bitiruvchilariga Oʻzbekiston Respublikasida oliy ma’lumot toʻgʻrisidagi hujjat
+                    sifatida tan
+                    olinadigan Turon universitetining belgilangan namunadagi diplomi beriladi.</p>
+            </div>
+        </div>
+
+        <section class="main__center" data-aos="fade-up" data-aos-anchor-placement="top-center"
+                 data-aos-duration="1300">
+            <div class="main__center-content">
+                <h1 class="center__content-h1">
+                    12:1
+                </h1>
+                <p class="center__content-p">Talaba o'qituvchi ulushi</p>
+            </div>
+
+            <img class="line" src="{% static 'university/icons/Line.png' %}" alt="">
+
+            <div class="main__center-content">
+                <h1 class="center__content-h1">
+                    250
+                </h1>
+                <p class="center__content-p">Hujjat topshirgan talabalar</p>
+            </div>
+
+            <img class="line" src="{% static 'university/icons/Line.png' %}" alt="">
+
+            <div class="main__center-content">
+                <h1 class="center__content-h1">
+                    100K
+                </h1>
+                <p class="center__content-p">Diplom o'tkazish</p>
+            </div>
+        </section>
+    </div>
+
+    <section class="main__object" data-aos="fade-up" data-aos-anchor-placement="top-center"
+             data-aos-duration="1300">
+        <div class="container">
+
+            <h1 class="main__content-title combo">Nima uchun aynan Turon universiteti?</h1>
+
+            <div class="main__object-big">
+                <div class="main__object-content">
+                    <img class="object-content-img" src="{% static 'university/icons/main_Icon1.png' %}" alt="">
+                    <h2 class="main__object-h2">Ishonchli diplom</h2>
+                    <p class="main__object-text">Universitetni tugatgandan so'ng talabalar davlat namunasidagi
+                        diplomga ega
+                        bo'ladilar, bu esa ular dunyoning istalgan nuqtasida ishlashlari mumkinligini anglatadi.</p>
+                </div>
+
+                <div class="main__object-content">
+                    <img class="object-content-img" src="{% static 'university/icons/main_Icon2.png' %}" alt="">
+                    <h2 class="main__object-h2">Qulaylik</h2>
+                    <p class="main__object-text">Bilim olish uchun eng yaxshi sharoitlar, yangi kampus, almashinuv
+                        dasturlari,
+                        taniqli kompaniyalarda stajirovka va bitirgandan so'ng ishga joylashtirish imkoniyatlari.
+                    </p>
+                </div>
+
+                <div class="main__object-content">
+                    <img class="object-content-img" src="{% static 'university/icons/main_Icon3.png' %}" alt="">
+                    <h2 class="main__object-h2">Tajribali mutaxassislar</h2>
+                    <p class="main__object-text">O'qituvchilarning 50% chet eldan.O‘qituvchilarning 50% nufuzli
+                        universitetlarni
+                        bitirgan O‘zbekistonlik mutaxassislardir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'university/components/_news.html' %}
+
+    {% include 'university/components/_main_form.html' %}
+
+</main>
+{% endblock main %}

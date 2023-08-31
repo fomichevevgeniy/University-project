@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block links %}
+{% include 'components/_links.html' %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+{% endblock links %}
+
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+
+{% block header %}
+{% endblock header %}
+
+{% block main %}
+<section class="relationships">
+    <div class="container">
+        <div class="acceptance_link">
+            <a href="{% url 'index' %}" class="acceptance-link">Bosh sahifa</a>
+            <span class="acceptance-link-span"></span>
+            <p class="acceptance-link-text">Bizning ta'lim dasturlarimiz</p>
+        </div>
+        <div class="acceptance_title-blog" data-aos="fade-up" data-aos-duration="1200">
+            <h2 class="acceptance-page-title">Bizning ta'lim dasturlarimiz</h2>
+        </div>
+        <div class="relationships-card" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+<!--        ########################################################################                   -->
+            {% for f in faculties %}
+            <a href="{% url 'faculty_detail' f.pk %}" class="relationships-card-exs">
+                <span class="relationships-card-span">{% if f.pk < 10 %}0{{ f.pk }}{% else %}{{f.pk }}{% endif %}</span>
+                <h4 class="relationships-card-title">{{ f.faculty }}</h4>
+            </a>
+            {% endfor %}
+<!--        ########################################################################                   -->
+        </div>
+
+
+    </div>
+</section>
+
+<section class="main__object" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1300">
+    <div class="container">
+
+        <h1 class="main__content-title combo">Biz taklif etadigan akadem imkoniyatlar</h1>
+
+        <div class="main__object-big" style="gap: 40px;">
+            <div class="main__object-content">
+                <img class="object-content-img" src="{% static 'university/img/educ_icon_1.png' %}" alt="">
+                <h2 class="main__object-h2">Online Ta'lim</h2>
+            </div>
+
+            <div class="main__object-content">
+                <img class="object-content-img" src="{% static 'university/img/educ_icon_2.png' %}" alt="">
+                <h2 class="main__object-h2">Daraja olish</h2>
+            </div>
+
+            <div class="main__object-content">
+                <img class="object-content-img" src="{% static 'university/img/educ_icon_3.png' %}" alt="">
+                <h2 class="main__object-h2">Sertifikatlar</h2>
+            </div>
+
+            <div class="main__object-content">
+                <img class="object-content-img" src="{% static 'university/img/educ_icon_4.png' %}" alt="">
+                <h2 class="main__object-h2">O'qishni ko'chirish imkoniyati</h2>
+            </div>
+
+            <div class="main__object-content">
+                <img class="object-content-img" src="{% static 'university/img/educ_icon_5.png' %}" alt="">
+                <h2 class="main__object-h2">Kasbga tayorlash</h2>
+            </div>
+
+            <div class="main__object-content">
+                <img class="object-content-img" src="{% static 'university/img/educ_icon_6.png' %}" alt="">
+                <h2 class="main__object-h2">Jamiyatda o'z o'rnini topish imkoniyati</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% include 'university/components/_study_slider.html' %}
+
+
+
+
+{% include 'university/components/_main_form.html' %}
+{% endblock main %}
+
+
+{% block scripts %}
+{% include 'components/_scripts.html' %}
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="{% static 'university/js/qabul.js' %}"></script>
+<script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+
+                350: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+
+                375: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+
+                400: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+
+                450: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+
+
+                500: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+                950: {
+                    slidesPerView: 3,
+                    spaceBetween: 50,
+                },
+            }
+        });
+
+
+</script>
+{% endblock scripts %}
+

@@ -1,0 +1,23 @@
+{% load static %}
+<section class="main__news" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1300">
+        <div class="container">
+            <div class="new__text_theme">
+                <h1 class="main__content-title combo_title">Yangliklar</h1>
+            </div>
+
+            <div class="news__object">
+                {% for n in news %}
+                <div class="news__object-card">
+                    <img src="{{ n.get_first_photo }}" alt="" class="card_img">
+                    <h3 class="news__card-h3">{{ n.title }}</h3>
+                    <p class="news__card-text">{{ n.get_first_desc|truncatechars:150 }}</p>
+                    <a href="{% url 'news_detail' n.pk %}" class="news__btn">Batafsil</a>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="btn__new">
+                <a href="{% url 'news' %}" class="news_button">Barcha yangliklar</a>
+            </div>
+        </div>
+    </section>

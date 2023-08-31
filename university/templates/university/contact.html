@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block links %}
+{% include 'components/_links.html' %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+{% endblock links %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block header %}
+
+{% endblock header %}
+
+
+
+
+{% block main %}
+
+<section class="acceptance">
+    <div class="container">
+        <div class="acceptance_link">
+            <a href="{% url 'index' %}" class="acceptance-link">Bosh sahifa</a>
+            <span class="acceptance-link-span"></span>
+            <p class="acceptance-link-text">Murojaat uchun</p>
+        </div>
+        <div class="acceptance_title-blog" data-aos="fade-up" data-aos-duration="1200">
+            <h2 class="acceptance-page-title">Murojaat uchun</h2>
+        </div>
+        <div class="contact-page">
+            <ul class="contact-page-ulrs">
+                <li class="contact-page-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                    <h4 class="contact-page-item-title">Manzilimiz</h4>
+                    <p class="contact-page-link-text">
+                        Qashqadaryo viloyati, Qarshi<br>
+                        shahri,Nasaf ko‘chasi, 1/14-uy
+                    </p>
+                    <p class="contact-page-link-text"></p>
+                </li>
+                <li class="contact-page-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+                    <h4 class="contact-page-item-title">Telefon raqam</h4>
+                    <p class="contact-page-link-text">
+                        (88) 214 88 80<br>
+                        (88) 012 88 80
+                    </p>
+                </li>
+                <li class="contact-page-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600">
+                    <h4 class="contact-page-item-title">E-mail</h4>
+                    <a data-clipboard-action="cut" data-clipboard-target="#bar" href="#!"
+                       class="contact-page-link-text contact-mail-link btn">
+                        turonuniversity@gmail.com
+                    </a>
+                </li>
+                <li class="contact-page-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="800">
+                    <h4 class="contact-page-item-title">Ish vaqti</h4>
+                    <p class="contact-page-link-text">Dushanba - Juma : 9-00 - 18-00​</p>
+                </li>
+            </ul>
+            <div class="contact-page-maps" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="1000">
+                <iframe class="contact-page-map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3107.10046657117!2d65.78145948235644!3d38.85305722201719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4ea72902a81ce1%3A0xd4752f02c8bb26e!2sTuron%20University!5e0!3m2!1sru!2s!4v1689350172020!5m2!1sru!2s"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% include 'university/components/_main_form.html' %}
+
+{% endblock main %}

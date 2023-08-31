@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block links %}
+{% include 'components/_links.html' %}
+{% endblock links %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+
+{% block header %}
+
+{% endblock header %}
+
+
+{% block main %}
+<body>
+
+<section class="document">
+    <div class="container" data-aos="fade-up"
+         data-aos-anchor-placement="top-center"
+         data-aos-duration="1300">
+        <div class="document_link">
+            <a href="{% url 'index' %}" class="document-link">Bosh sahifa</a>
+            <span class="document-link-span"></span>
+            <p class="document-link-text">Hujjat topshirish</p>
+        </div>
+        <h2 class="document-page-title">Hujjat topshirish</h2>
+
+
+        <form class="document-form" action="" data-aos="fade-up"
+              data-aos-anchor-placement="top-center"
+              data-aos-duration="1300" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+
+            <div class="document-personal-information document-info">
+                <h4 class="document-information-title">Shaxsiy ma'lumotlar</h4>
+                <div class="document-information-labels">
+                    <label class="document-information-label">
+                        <span class="document-information-span">{{ form.first_name.label }}<small>*</small></span>
+                        {{ form.first_name }}
+                    </label>
+                    <label class="document-information-label">
+                        <span class="document-information-span">{{ form.last_name.label }}<small>*</small></span>
+                        {{ form.last_name }}
+                    </label>
+                    <label class="document-information-label">
+                        <span class="document-information-span">{{ form.middle_name.label }}<small>*</small></span>
+                        {{ form.middle_name }}
+                    </label>
+                    <label class="document-information-label">
+                        <span class="document-information-span">{{ form.birth_date.label }}<small>*</small></span>
+                        {{ form.birth_date }}
+                    </label>
+                    <label class="document-information-label">
+                        <span class="document-information-span">{{ form.gender.label }}<small>*</small></span>
+                        {{ form.gender }}
+                    </label>
+                    <label class="document-information-label">
+                        <span class="document-information-span">{{ form.region.label }}<small>*</small></span>
+                        {{ form.region }}
+                    </label>
+                    <label class="document-information-label">
+                        <span class="document-information-span">{{ form.district.label }}<small>*</small></span>
+                        {{ form.district }}
+                    </label>
+                    <label class="document-information-label">
+                        <span class="document-information-span">{{ form.address.label }}<small>*</small></span>
+                        {{ form.address }}
+                    </label>
+                    <label class="document-information-label">
+                        <span id="input_6" class="document-information-span">{{ form.phone_number.label }}<small>*</small></span>
+                        {{ form.phone_number }}
+                    </label>
+                    <label class="document-information-label">
+                        <span class="document-information-span">{{ form.extra_phone_number.label }}<small>*</small></span>
+                        {{ form.extra_phone_number }}
+                    </label>
+                </div>
+            </div>
+            <div class="document-passport-information document-info">
+                <h4 class="document-information-title ">Pasport ma’lumotlari</h4>
+                <div class="document-passport-labels">
+                    <label class="document-passport-label">
+                        <span class="document-information-span">{{ form.passport_photo.label }}<small>*</small></span>
+                        <div class="document-img-group">
+                            <img class="document-img-logo" id="blah" src=""/>
+                            {{ form.passport_photo }}
+                        </div>
+                    </label>
+                    <div class="document-passport-label-group">
+                        <label class="document-information-label">
+                            <span class="document-information-span">{{ form.passport_series.label }}<small>*</small></span>
+                            {{ form.passport_series }}
+                        </label>
+                        <label class="document-information-label">
+                            <span class="document-information-span">{{ form.passport_numbers.label }}<small>*</small></span>
+                            {{ form.passport_numbers }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="document-educational-information document-info">
+                <h4 class="document-information-title ">Ta'lim ma'lumotlari</h4>
+                <div class="document-passport-labels">
+                    <label class="document-passport-label">
+                        <span class="document-information-span">{{ form.diploma_photo.label }}<small>*</small></span>
+                        <div class="document-img-group">
+                            <img class="document-img-logo" id="blah2" src=""/>
+                            {{ form.diploma_photo }}
+                        </div>
+                    </label>
+                    <div class="document-passport-label-group">
+                        <label class="document-information-label">
+                            <span class="document-information-span">{{ form.faculty.label }}<small>*</small></span>
+                            {{ form.faculty }}
+                        </label>
+                        <label class="document-information-label">
+                            <span class="document-information-span">{{ form.study_type.label }}<small>*</small></span>
+                            {{ form.study_type }}
+                        </label>
+                        <label class="document-information-label">
+                            <span class="document-information-span">{{ form.exam_lang.label }}<small>*</small></span>
+                            {{ form.exam_lang }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <button class="document-send-information" type="submit">Jo’natish</button>
+
+        </form>
+
+    </div>
+<!-- ??? СМС ??? -->
+</section>
+
+
+{% block scripts %}
+{% include 'components/_scripts.html' %}
+<script src="{% static 'university/js/document.js' %}"></script>
+{% endblock scripts %}
+
+
+</body>
+
+{% endblock main %}

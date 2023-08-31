@@ -1,0 +1,108 @@
+{% load static %}
+<nav class="nav active">
+    <div class="container">
+        <div class="nav__content">
+            <div class="nav_left">
+                <img src="{% static 'university/img/navimg.png' %}" alt="" />
+            </div>
+            <div class="nav_right">
+                <ul class="nav_ul">
+                    <li class="nav__ul_li">
+                        <a class="nav__ul-a" href="{% url 'index' %}">Asosiy</a>
+                    </li>
+                    <li class="nav__ul_li">
+                        <a class="nav__ul-a" href="{% url 'news' %}">Yangiliklar</a>
+                    </li>
+                    <li class="nav__ul_li">
+                        <a class="nav__ul-a" href="{% url 'study' %}">O'quv faoliyati</a>
+                    </li>
+                    <li class="nav__ul_li">
+                        <a class="nav__ul-a" href="{% url 'forstudents' %}">Talabalarga</a>
+                    </li>
+                    <li class="nav__ul_li">
+                        <a class="nav__ul-a" href="{% url 'for_enroll' %}">Qabul</a>
+
+
+
+                    </li>
+                    <li class="nav__ul_li">
+                        <div class="dropdown">
+                            <button id="dropdown-btn-one" class="dropdown-btn backnone">
+                                <a class="dropdown-lang active" href="#!">Hujjat topshirish</a>
+                                <img src="{% static 'university/icons/downIcon.png' %}" alt="">
+                            </button>
+                            <ul id="dropdown_content_one" class="dropdown-content">
+                                <li><a class="dropdown-lang" href="{% url 'submission' %}">Hujjat topshirish tartibi</a>
+                                </li>
+                                <li><a class="dropdown-lang" href="{% url 'document' %}">Hujjat topshirish</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav__ul_li">
+                        <a class="nav__ul-a" href="{% url 'contact' %}">Kontaktlar</a>
+                    </li>
+                </ul>
+
+                <!--                <div class="dropdown">-->
+                <!--                    <button id="dropBtn" class="dropdown-btn">-->
+                <!--                        <a id="dropdown-lang-btn" class="dropdown-lang  active" href="">Uz</a>-->
+                <!--                        <img src="{% static 'university/icons/downIcon.png' %}" alt="">-->
+                <!--                    </button>-->
+                <!--                    <ul id="DropContentTwo" class="dropdown-content-two">-->
+                <!--                        <li><a class="dropdown-lang" href="">Ru</a></li>-->
+                <!--                        <li><a class="dropdown-lang" href="">En</a></li>-->
+                <!--                    </ul>-->
+                <!--                </div>-->
+
+
+                <button class="nav_open-btn">
+                    <span class="nav_span"></span>
+                    <span class="nav_span"></span>
+                    <span class="nav_span"></span>
+                </button>
+
+
+                <nav class="media_menu">
+                    <ul class="media_list">
+                        <li class="media_item">
+                            <a href="#!" class="media_link active">Asosiy</a>
+                        </li>
+                        <li class="media_item">
+                            <a href="{% url 'news' %}" class="media_link">Yangiliklar</a>
+                        </li>
+                        <li class="media_item">
+                            <a href="{% url 'study' %}" class="media_link">O'quv faoliyati</a>
+                        </li>
+                        <li class="media_item">
+                            <a href="{% url 'forstudents' %}" class="media_link">Talabalarga</a>
+                        </li>
+                        <li class="media_item">
+                            <a href="#!" class="media_link">Qabul</a>
+                        </li>
+                        <li class="media_item">
+                            <a href="#!" class="media_link doc">Hujjat topshirish <span
+                                    class="media_link-span"></span></a>
+                            <ul id="media_list-two" class="media_list-two">
+                                <li class="media_item">
+                                    <a href="{% url 'submission' %}"
+                                        class="media_link-two media_link ">Hujjat&nbsp;topshirish&nbsp;tartibi</a>
+                                </li>
+                                <li class="media_item">
+                                    <a href="./html/document.html"
+                                        class="media_link-two media_link">Hujjat&nbsp;topshirish</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="media_item">
+                            <a href="{% url 'contact' %}" class="media_link">Kontaktlar</a>
+                        </li>
+                    </ul>
+                    <button class="media_btn">
+                        <span class="media_span-one"></span>
+                        <span class="media_span-two"></span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </div>
+</nav>

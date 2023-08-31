@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+
+{% block header %}
+
+{% endblock header %}
+
+{% block main %}
+<body>
+<section class="viewNews">
+    <div class="container">
+        <div class="viewNews_link">
+            <a href="{% url 'index' %}" class="viewNews-link">Bosh sahifa</a>
+            <span class="viewNews-link-span"></span>
+            <a href="{% url 'news' %}" class="viewNews-link viewNews-child">Yangliklar</a>
+            <span class="viewNews-link-span"></span>
+            <p class="viewNews-link-text">{{ news.title }}</p>
+        </div>
+        <div class="container-plus">
+            <div class="viewNews_post">
+                <div class="viewNews_post-title-group" data-aos="fade-up" data-aos-duration="1200">
+                    <h2 class="viewNews_post-title">{{ news.title }}</h2>
+                    <button class="viewNews_post-btn">{{ news.category }}</button>
+                    <div class="viewNews_post-data">
+                        <img src="{% static 'university/images/Placeholder.png' %}" alt="">
+                        <h6 class="viewNews_post-data-title">TU Pressa</h6>
+                        <p class="viewNews_post-data-text">· {{ news_date }} <span class="viewNews_post-data-text">· {{news.min_to_read}}m read</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="viewNews_group">
+                    {% for k, v in data.items %}
+                    <img src="{{ k.image.url }}" data-aos="fade-up" data-aos-duration="1200"
+                         data-aos-delay="200"
+                         class="viewNews_group-logo" alt="">
+                    <p class="viewNews_group-test" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                        {{ v.description }}</p>
+                    {% endfor %}
+                </div>
+                <div class="viewNews_icon-group" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+                    <div class="viewNews_icons">
+                        <img src="{% static 'university/images/facebook.png' %}" alt="">
+                        <img src="{% static 'university/images/in.png' %}" alt="">
+                        <img src="{% static 'university/images/twitter.png' %}" alt="">
+                        <img src="{% static 'university/images/Group 55872.png' %}" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+
+
+{% endblock main %}

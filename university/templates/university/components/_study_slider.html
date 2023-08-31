@@ -1,0 +1,35 @@
+{% load static %}
+<section class="acceptance-slider">
+    <div class="container">
+        <div class="acceptance_slider-title-blog"
+             data-aos="fade-up"
+             data-aos-delay="100"
+             data-aos-duration="1200"
+        >
+            <h2 class="acceptance-page-title">O’qish jarayonidan lavhalar</h2>
+        </div>
+        <div class="acceptance-swipper">
+            <div class="swiper mySwiper" data-aos="fade-up"
+                 data-aos-delay="300"
+                 data-aos-duration="1200">
+                <div class="swiper-wrapper">
+                    {% for image in slider_images %}
+                    <div class="swiper-slide">
+                        <img src="{{ image.get_photo }}" class="acceptance-slider-img" alt="">
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="acceptance-window">
+    <div>
+        <img src="#!" class="acceptance-window-logo" alt="">
+        <i class="acceptance-window-icon">
+            <span class="acceptance-window-icon-span-one"></span>
+            <span class="acceptance-window-icon-span-two"></span>
+        </i>
+    </div>
+</section>

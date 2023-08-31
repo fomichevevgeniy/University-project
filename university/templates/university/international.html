@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block links %}
+{% include 'components/_links.html' %}
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+{% endblock links %}
+
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+
+{% block header %}
+
+{% endblock header %}
+
+{% block main %}
+<body>
+
+<section class="acceptance" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1300">
+    <div class="container">
+        <div class="acceptance_link">
+            <a href="{% url 'index' %}" class="acceptance-link">Bosh sahifa</a>
+            <span class="acceptance-link-span"></span>
+            <p class="acceptance-link-text">{{ faculty.faculty }}</p>
+        </div>
+        <div class="acceptance_title-blog">
+            <h2 class="acceptance-page-title">{{ faculty.faculty }}</h2>
+        </div>
+        <div class="united__content">
+            <div class="united__left">
+                <p class="united__left-p">{{ faculty.description }}</p>
+
+                <a href="{% url 'document' %}" class="united__left_btn">Hujjat topshirish</a>
+            </div>
+            <div class="united__right">
+                <img src="{{ faculty.get_photo }}" alt="" class="united__right_img"
+                style="width: 590px;
+                       height: 420px;
+                       border-radius: 15px;">
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'university/components/_main_form.html' %}
+
+{% block scripts %}
+{% include 'components/_scripts.html' %}
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="{% static 'university/js/qabul.js' %}"></script>
+<script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        
+        350: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        
+        375: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        
+        400: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        
+        450: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        
+        
+        500: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
+        950: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+        },
+      }
+    });
+
+</script>
+<script>
+        AOS.init();
+
+</script>
+{% endblock scripts %}
+</body>
+
+{% endblock main %}

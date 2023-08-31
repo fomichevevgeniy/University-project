@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block header %}
+
+{% endblock header %}
+
+
+{% block main %}
+
+<section class="news">
+    <div class="container">
+        <div class="news_link">
+            <a href="{% url 'index' %}" class="news-link">Bosh sahifa</a>
+            <span class="news-link-span"></span>
+            <p class="news-link-text">Yangliklar</p>
+        </div>
+        <div
+                class="news_title-blog"
+                data-aos="fade-up"
+                data-aos-anchor-placement="top-center"
+                data-aos-duration="1300">
+            <h2 class="news-page-title">
+                {% if 'category' in request.path %}
+                {{ title }}
+                {% else %}
+                Yangliklar
+                {% endif %}
+            </h2>
+
+            <form method="get" class="news-search" data-aos="fade-up"
+                  data-aos-anchor-placement="top-center"
+                  data-aos-duration="1300">
+                <input
+                        name="q"
+                        type="search"
+                        class="news-search-input"
+                        placeholder="Qidiruv"
+                        aria-label="Search"
+                        aria-describedby="search-addon"/>
+                <button class="news-search-btn">
+                    <img src="{% static 'university/img/search_logo.png' %}" alt="logo"/>
+                </button>
+            </form>
+        </div>
+        <ul class="news-list" data-aos="fade-up"
+            data-aos-anchor-placement="top-center"
+            data-aos-duration="1300">
+            <li class="news-item">
+                <a href="{% url 'news' %}" class="news-link-nav {% if 'Yangiliklar' in title %}active{% endif %}">Barcha yangiliklar</a>
+            </li>
+            {% for c in categories %}
+            <li class="news-item">
+                <a href="{% url 'category' c.pk %}" class="news-link-nav {% if c.category_title in title %}active{% endif %}">{{ c.category_title }}</a>
+            </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+    <div class="container">
+        <div class="news-all-blogs" data-aos="fade-up"
+             data-aos-anchor-placement="top-center"
+             data-aos-duration="1300">
+            {% for n in news %}
+            <div class="news-new-blog">
+                <img src="{{ n.get_first_photo }}" class="news-blogs-img" alt="logo"/>
+                <h4 class="news-blogs-title">{{ n.title }}</h4>
+                <p class="news-blogs-text">
+                    {{ n.get_first_desc|truncatechars:120 }}
+                </p>
+                <a href="{% url 'news_detail' n.pk %}" class="news-blogs-btn">Batafsil</a>
+            </div>
+            {% endfor %}
+<!--        #####################################                      -->
+
+        </div>
+    </div>
+</section>
+
+{% endblock main %}
+
+
+

@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block links %}
+{% include 'components/_links.html' %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+{% endblock links %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block header %}
+
+{% endblock header %}
+
+
+{% block main %}
+<body>
+
+<section class="dangers">
+    <div class="container">
+        <div class="acceptance_link">
+            <a href="{% url 'index' %}" class="acceptance-link">Bosh sahifa</a>
+            <span class="acceptance-link-span"></span>
+            <p class="acceptance-link-text">Qabul</p>
+        </div>
+        <div class="acceptance_title-blog" data-aos="fade-up" data-aos-duration="1200">
+            <h2 class="acceptance-page-title">Qabul</h2>
+        </div>
+        <div class="dangers-danger" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+            <h4 class="dangers-danger-title">HURMATLI ABITURIYENTLAR!!!</h4>
+            <p class="dangers-danger-text">TURON Universitetida 2023-2024 o’quv yili uchun qabul komissiyasi
+                2023-yil iyun oyidan o’z faoliyatini boshlaganini ma’lum qilamiz. Siz quyidagi ta’lim
+                yo’nalishlariga hujjat topshirishingiz mumkin:</p>
+        </div>
+        <div class="dangers-card" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+            {% for faculty in faculties %}
+            <div class="dangers-card-exs" data-id="1">
+                <h4 class="dangers-card-title">{{ faculty.faculty }}</h4>
+                <a href="{% url 'document' %}" class="dangers-card-link">Hujjat topshirsh<span
+                        class="dangers-card-span"></span></a>
+            </div>
+            {% endfor %}
+        </div>
+        <button class="dangers-card-btn">
+            <a href="{% url 'document' %}" class="dangers-card-btn-link">Hujjat topshirish</a>
+        </button>
+    </div>
+</section>
+
+
+{% include 'university/components/_study_slider.html' %}
+{% include 'university/components/_main_form.html' %}
+
+
+{% block scripts %}
+
+{% include 'components/_scripts.html' %}
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="{% static 'university/js/qabul.js' %}"></script>
+<script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+
+                350: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+
+                375: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+
+                400: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+
+                450: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+
+
+                500: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+                950: {
+                    slidesPerView: 3,
+                    spaceBetween: 50,
+                },
+            }
+        });
+
+
+</script>
+
+{% endblock scripts %}
+</body>
+
+{% endblock main %}

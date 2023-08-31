@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block links %}
+{% include 'components/_links.html' %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+{% endblock links %}
+
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+
+{% block header %}
+
+{% endblock header %}
+
+{% block main %}
+<body>
+
+<section class="acceptance">
+    <div class="container">
+        <div class="acceptance_link">
+            <a href="{% url 'index' %}" class="acceptance-link">Bosh sahifa</a>
+            <span class="acceptance-link-span"></span>
+            <p class="acceptance-link-text">Hujjat topshirish tartibi</p>
+        </div>
+        <div class="acceptance_title-blog" data-aos="fade-up" data-aos-duration="1200">
+            <h2 class="acceptance-page-title">Hujjat topshirish tartibi</h2>
+        </div>
+        <div class="ariza" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+            <div class="ariza__content">
+                <p class="ariza__content_text">
+                    Turon univerisitetitiga kirish imtihonlarida qatnashish uchun birinchi navbatda <a
+                        href="{% url 'document' %}">onlayn
+                    ro'yxatdan o'ting.</a> Imtihonlardan muvaffaqiyatli oʻtib, talabalikka tavsiya etilgan
+                    abituriyentlar quyidagi hujjatlarni imtihon javoblari chiqqan kundan boshlab 10 ish kunida
+                    universitetga olib kelishlari kerak:
+                </p>
+                <ul class="ariza__ol">
+                    <li class="ariza__li">11 yillik maktab shahodatnomasi yoki kollej/litsey diplomi ilovasi bilan
+                        <span>(asl nusxasi);</span></li>
+                    <li class="ariza__li">Pasport yoki ID karta<span>(nusxasi);</span></li>
+                    <li class="ariza__li">3 x 4 sm o'lchamdagi fotosurat <span>(6 dona);</span></li>
+                    <li class="ariza__li">Tarjimai hol;</li>
+                    <li class="ariza__li">Papka <span>(delo).</span></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% include 'university/components/_main_form.html' %}
+
+
+</body>
+
+{% endblock main %}

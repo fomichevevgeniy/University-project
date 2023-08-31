@@ -1,0 +1,49 @@
+{% load static %}
+<section class="main__form" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1300">
+    <div class="container">
+        <div class="main__form-content">
+            <div class="main__form-left">
+                <p class="form__left-text">Biz bilan yorqin kelajak sari muhim qadam tashlang!</p>
+            </div>
+            <div class="main__form-right">
+                <div class="form__right-theme">
+                    <h1 class="form__right-h1">So'rov qoldiring</h1>
+                    <p class="form-right-text">Biz siz bilan tez fursatda qayta aloqaga chiqamiz</p>
+                </div>
+                <form class="form" action="" enctype="multipart/form-data" method="post">
+                    {% csrf_token %}
+                    <div class="form__mini">
+                        <div class="mini">
+                            <label>{{ form.first_name.label }}</label>
+                            <br>
+                            {{ form.first_name }}
+                        </div>
+
+                        <div class="mini">
+                            <label>{{ form.last_name.label }}</label>
+                            <br>
+                            {{ form.last_name }}
+                        </div>
+                    </div>
+
+                    <div class="form__mini">
+                        <div class="mini">
+                            <label>{{ form.email.label }}</label>
+                            <br>
+                            {{ form.email }}
+                        </div>
+                        <div class="mini">
+                            <label>{{ form.phone_number.label }}</label>
+                            <br>
+                            {{ form.phone_number }}
+                        </div>
+                    </div>
+
+                    <div class="btn_clas">
+                        <button type="submit" class="form__send-btn">Yuborish</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

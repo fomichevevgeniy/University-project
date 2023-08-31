@@ -1,0 +1,78 @@
+{% load static %}
+<footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__left">
+                    <img src="{% static 'university/img/navimg.png' %}" alt="">
+                    <p class="footer__left-p">Turon universiteti 2022 yilda Oʻzbekistonda yuqori malakali,
+                        raqobatbardosh kadrlar
+                        tayyorlash maqsadida Qarshi shahrida tashkil etilgan bo'lib hozirda 12 ta ta'lim yo'nalishlarida
+                        mutaxassis
+                        tayyorlashni niyat qilgan Universitet.</p>
+                    <div class="mini__icons">
+                        <a class="icons" href="#"><img src="{% static 'university/icons/footer_telegram.png' %}" alt=""></a>
+                        <a class="icons" href="#"><img src="{% static 'university/icons/footer_insta.png' %}" alt=""></a>
+                        <a class="icons" href="#"><img src="{% static 'university/icons/footer_facebook.png' %}" alt=""></a>
+                        <a class="icons" href="#"><img src="{% static 'university/icons/footer_youtube.png' %}" alt=""></a>
+                    </div>
+                </div>
+                <div class="footer__center">
+                    <h1 class="footer__center_text">Foydali linklar</h1>
+                    <ul class="footer__center-ul">
+                        <li><a class="footer__center-link" href="{% url 'index' %}">Asosiy</a></li>
+                        <li><a class="footer__center-link" href="{% url 'news' %}">Yangiliklar</a></li>
+                        <li><a class="footer__center-link" href="{% url 'study' %}">O'quv faoliyati</a></li>
+                        <li><a class="footer__center-link" href="{% url 'study' %}">Talabalarga</a></li>
+                        <li><a class="footer__center-link" href="{% url 'forstudents' %}">Abituriyentlarga</a></li>
+                        <li><a class="footer__center-link" href="{% url 'document' %}">Hujjat topshirish</a></li>
+                        <li><a class="footer__center-link" href="#">Elektron kutubxona</a></li>
+                        <li><a class="footer__center-link" href="{% url 'contact' %}">Kontaktlar</a></li>
+                    </ul>
+                </div>
+                <div class="footer__right">
+                    <h1 class="footer__center_text">Kontaktlar</h1>
+
+                    <div class="footer__right-mini">
+                        <div class="right__mini-icons">
+                            <img src="{% static 'university/icons/contact_icon1.png' %}" alt="">
+                            <h1 class="right__mini-text">Manzilimiz</h1>
+                        </div>
+                        <p class="right__mini-adress">Qashqadaryo viloyati, Qarshi shahri,Nasaf ko‘chasi, 1/14-uy</p>
+                    </div>
+
+                    <div class="footer__right-mini">
+                        <div class="right__mini-icons">
+                            <img src="{% static 'university/icons/contact_icon2.png' %}" alt="">
+                            <h1 class="right__mini-text">Telefon raqam</h1>
+                        </div>
+                        <p class="right__mini-adress">(88) 214 88 80 (88) 012 88 80</p>
+                    </div>
+
+                    <div class="footer__right-mini">
+                        <div class="right__mini-icons">
+                            <img src="{% static 'university/icons/footer_icon3.png' %}" alt="">
+                            <h1 class="right__mini-text">E-mail</h1>
+                        </div>
+                        <p class="right__mini-adress">turonuniversity@gmail.com</p>
+                    </div>
+
+                    <div class="footer__right-mini">
+                        <div class="right__mini-icons">
+                            <img src="{% static 'university/icons/footer_icon34.png' %}" alt="">
+                            <h1 class="right__mini-text">Ish vaqti</h1>
+                        </div>
+                        <p class="right__mini-adress">Dushanba - Juma : 9-00 - 18-00​</p>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="footer__line">
+                © 2022 by Turon university
+            </div>
+
+        </div>
+
+
+    </footer>

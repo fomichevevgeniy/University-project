@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block main %}
+<section class="students">
+    <div class="container">
+        <div class="acceptance_link">
+            <a href="{% url 'index' %}" class="acceptance-link">Bosh sahifa</a>
+            <span class="acceptance-link-span"></span>
+            <p class="acceptance-link-text">Talabalarni qo'llab-quvvatlash markazi</p>
+        </div>
+        <div class="acceptance_title-blog" data-aos="fade-up" data-aos-duration="1200">
+            <h2 class="acceptance-page-title">Talabalarni qo'llab-quvvatlash markazi</h2>
+        </div>
+        <div class="students-category">
+            {% for article in articles %}
+            <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200" class="students-category-item">
+                <img src="{{ article.image.url }}" alt="logo" class="students-category-logo"
+                style="width: 340px;
+                       height: 250px;
+                       border-radius: 10px;">
+                <h4 class="students-category-title">{{ article.title }}</h4>
+                <p class="students-category-text">{{ article.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</section>
+
+{% include 'university/components/_main_form.html' %}
+
+{% endblock main %}
